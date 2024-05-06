@@ -1,0 +1,21 @@
+{% extends "nav.html" %}
+{% load static %}
+<title>{% block title %} Review{% endblock %}</title>
+{% block content %}
+<div class="glass-container">
+    <h2 class="text-center">People Reviews</h2>
+    <div class="ps-review">
+        {% for review in comment_review %}
+        <div class="glass-review">
+            <header>
+                <div class="glass-rating">
+                    <div class="gold-stars" style="width: {{ review.rating * 20 }}%"></div>
+                </div>
+                <p>By {{ review.name }}</p>
+            </header>
+            <p>{{ review.review_comment }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
